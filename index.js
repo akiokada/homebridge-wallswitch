@@ -5,7 +5,7 @@ gpio.setMode(gpio.MODE_BCM);
 module.exports = function(homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
-  homebridge.registerAccessory("homebridge-switch", "Switch", SwitchAccessory);
+  homebridge.registerAccessory("homebridge-switch", "WallSwitch", SwitchAccessory);
 }
 
 function SwitchAccessory(log, config) {
