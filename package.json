@@ -1,0 +1,26 @@
+{
+  "name": "homebridge-wallswitch",
+  "version": "0.0.1",
+  "description": "homebridge-wallswitch",
+  "license": "MIT",
+  "keywords": [
+    "homebridge-plugin",
+    "wallswitch",
+    "raspberry-pi",
+    "homebridge"
+  ],
+  "engines": {
+    "node": ">=6.12.2",
+    "homebridge": ">=0.4.33"
+  },
+  "author": {
+    "name": "Aki Okada"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/akiokada/homebridge-wallswitch.git"
+  },
+  "dependencies": {
+    "rpi-gpio": "^0.9.1"
+  }
+}
