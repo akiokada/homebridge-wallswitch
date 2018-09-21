@@ -21,7 +21,7 @@ function SwitchAccessory(log, config) {
   this.log("  Duration : " + this.duration);
   gpio.setup(this.relayPin, gpio.DIR_LOW);
   gpio.setup(this.switchPin, gpio.DIR_IN, gpio.EDGE_BOTH, function () {
-    gpio.read(this.pin, function (err, value) {
+    gpio.read(this.switchPin, function (err, value) {
       state = value
     });
   }.bind(this));
@@ -48,17 +48,15 @@ SwitchAccessory.prototype.getServices = function() {
       .on('get', this.getPowerOn.bind(this))
       .on('set', this.setPowerOn.bind(this));
       
-	gpio.on('change', function(channel, value) {
-    if (channel == this.switchPin) {
-      if (value == 1) {
-        timeOn = Date.now();
-      } else if (value == 0) {
-        timeDiff = Date.now() - timeOn;
-        if (timeDiff>this.duration) {
-          SwitchService.setCharacteristic(Characteristic.On, !this.binaryState);
-        }
-      }
-    }
+		gpio.on('change', function(channel, value) {
+		if (value == 1) {
+			timeOn = Date.now();
+		} else if (value == 0) {
+			timeDiff = Date.now() - timeOn;
+			if (timeDiff>this.duration) {
+				SwitchService.setCharacteristic(Characteristic.On, !this.binaryState);
+			}
+		}
   }.bind(this));
   return [SwitchService];
 }
