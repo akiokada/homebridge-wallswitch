@@ -8,7 +8,7 @@
   "description": "",
   "accessories": [
     {
-      "accessory": "Switch",
+      "accessory": "WallSwitch",
       "name":  "Test Switch",
       "relayPin": 24,
       "switchPin": 23
