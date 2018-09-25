@@ -15,3 +15,5 @@ rpi-gpio https://github.com/JamesBarwell/rpi-gpio.js#readme
       "duration": 100
     }
  ```
+
+![schematic](https://github.com/akiokada/homebridge-wallswitch/images/Sketch_bb.png)
