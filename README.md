@@ -16,4 +16,4 @@ rpi-gpio https://github.com/JamesBarwell/rpi-gpio.js#readme
     }
  ```
 
-![schematic](homebridge-wallswitch/images/Sketch_bb.png)
+![schematic](images/Sketch_bb.png)
